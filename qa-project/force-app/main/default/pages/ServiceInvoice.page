@@ -17,7 +17,7 @@
     <td><apex:outputText value="{!Service_Invoice__c.Paid_Date__c}"/></td>
   </tr>
   <apex:pageBlock> 
-    <apex:pageBlockTable border="1px" value="{!Service_Invoice__c.Service_items__r}"  var="si">
+    <apex:pageBlockTable border="1.5px" value="{!Service_Invoice__c.Service_items__r}"  var="si">
       <apex:column value="{!si.name}"/>
       <apex:column value="{!si.Hours_Worked__c}"/>
       <apex:column value="{!si.Date__c}"/>
