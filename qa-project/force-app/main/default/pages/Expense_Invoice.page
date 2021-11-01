@@ -1,0 +1,23 @@
+<apex:page standardController="Service_Invoice__c" renderAs="pdf">
+  <!-- Begin Default Content REMOVE THIS -->
+  <h1>Expense Invoice</h1>
+  <tr><th>Expense Number</th>
+      <td><apex:outputText value="{!Service_Invoice__c.Custom_Auto_Number__c}"/></td>
+  </tr>
+  <tr><th>Total</th>
+      <td><apex:outputText value="{!Service_Invoice__c.Total_Expense_Cost__c}"/></td>
+  </tr>
+  <tr><th>Submitted Date</th>
+      <td><apex:outputText value="{!Service_Invoice__c.Submitted_Date__c}"/></td>
+  </tr>
+  <tr><th>Paid Date</th>
+    <td><apex:outputText value="{!Service_Invoice__c.Paid_Date__c}"/></td>
+  </tr>
+  <apex:pageBlock> 
+    <apex:pageBlockTable border="1px" value="{!Service_Invoice__c.Expense_items__r}"  var="ei">
+      <apex:column value="{!ei.name}"/>
+      <apex:column value="{!ei.expense_type__c}"/>
+      <apex:column value="{!ei.expense_cost__c}"/>
+    </apex:pageBlockTable>
+  </apex:pageBlock>
+</apex:page>
